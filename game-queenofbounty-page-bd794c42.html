@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赏金女王 · 专题报道</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fce9d8 0%, #f5d5b3 50%, #ebc094 100%);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .page {
+            max-width: 1024px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* hero banner —— 杂志头图 */
+        .hero {
+            background: linear-gradient(132deg, #c97d4a 0%, #a45d34 100%);
+            border-radius: 2rem;
+            padding: 3rem 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 16px 40px -8px rgba(140, 70, 30, 0.35);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -30%; right: -10%;
+            width: 280px; height: 280px;
+            background: radial-gradient(circle, rgba(255,215,160,0.25) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .hero h1 {
+            font-size: clamp(2.4rem, 7vw, 4.2rem);
+            font-weight: 600;
+            color: #fff6ea;
+            letter-spacing: 2px;
+            line-height: 1.15;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 2;
+        }
+        .hero .sub {
+            display: block;
+            font-size: 1.05rem;
+            font-weight: 400;
+            color: #fcead6;
+            margin-top: 0.8rem;
+            letter-spacing: 0.5px;
+            opacity: 0.9;
+            border-left: 3px solid #ffd8b0;
+            padding-left: 1rem;
+        }
+
+        /* 内容卡片通用 */
+        .card {
+            background: #fffffffa;
+            backdrop-filter: blur(2px);
+            border-radius: 2rem;
+            padding: 2rem 2.2rem;
+            box-shadow: 0 8px 28px rgba(100, 60, 30, 0.08);
+            margin-bottom: 2rem;
+        }
+        .card:last-of-type {
+            margin-bottom: 2.4rem;
+        }
+        .card h2 {
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #6a3e26;
+            letter-spacing: -0.01em;
+            border-bottom: 2px solid #e9cfbb;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.2rem;
+        }
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #7d4d31;
+            margin: 1.5rem 0 0.6rem 0;
+        }
+        .card p {
+            color: #2f1e14;
+            line-height: 1.7;
+            font-size: 1rem;
+            margin-bottom: 0.9rem;
+        }
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+        .highlight {
+            background: #f5e2d3;
+            padding: 0.2rem 0.5rem;
+            border-radius: 6px;
+            font-weight: 450;
+            color: #542f1c;
+        }
+
+        /* 链接按钮感 */
+        .link-button {
+            display: inline-block;
+            background: #c27d4f;
+            color: #fffaf3;
+            font-weight: 500;
+            padding: 0.6rem 1.8rem;
+            border-radius: 60px;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 4px 12px rgba(170, 90, 40, 0.2);
+            letter-spacing: 0.3px;
+        }
+        .link-button:hover {
+            background: #a8663e;
+            transform: scale(1.01);
+        }
+        .link-button:active {
+            transform: scale(0.97);
+        }
+
+        /* 页脚 */
+        .footer-note {
+            text-align: center;
+            padding: 1.8rem 0 0.6rem 0;
+            color: #502f1d;
+            border-top: 1px solid #cda683;
+            font-size: 0.95rem;
+            opacity: 0.85;
+            margin-top: 1rem;
+        }
+        .footer-note a {
+            color: #6a3e26;
+            text-decoration: underline;
+            font-weight: 500;
+            text-underline-offset: 3px;
+        }
+
+        /* 小响应 */
+        @media (max-width: 600px) {
+            .hero { padding: 2rem 1.5rem; }
+            .card { padding: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <!-- HERO 专题横幅 -->
+    <header class="hero">
+        <h1>
+            赏金女王
+            <span class="sub">特辑 · 追逐悬赏，逆转命运</span>
+        </h1>
+    </header>
+
+    <!-- 背景说明 —— 赏金世界的由来 -->
+    <section class="card">
+        <h2>悬赏令背后的规则</h2>
+        <p>
+            在边境与王权交汇之地，赏金制度曾是维持秩序的灰色契约。每一枚金币都标着代价，每一个通缉令背后藏着故事。
+            <strong class="highlight">赏金女王</strong> 便是这片混沌中崛起的一个代号——不依附于任何势力，只凭追猎与判断赢得资源。
+        </p>
+        <p>
+            从荒野驿站到城堡大厅，赏金猎人们交换情报、评估风险。而「女王」并非头衔，而是一种极致的效率象征：最快锁定目标、最少损耗完成委托。这种生存哲学逐渐演变为独特的博弈风格。
+        </p>
+    </section>
+
+    <!-- 三段自然介绍：机制 · 策略 · 氛围 -->
+    <section class="card">
+        <h2>三面解析 · 赏金法则</h2>
+
+        <h3>▎契约与风险</h3>
+        <p>
+            每一份悬赏都对应明确的赏金数额，但情报可能残缺，目标可能设伏。优秀的猎人懂得筛选委托——高回报往往伴随高变数。
+            在 <a href="https://game-queenofbounty.com" class="link-button" style="font-size:0.9rem; padding:0.3rem 1.2rem; background:#b8734a;">赏金女王</a> 的语境里，对风险的预判与资源分配同样关键，这并非运气游戏，而是信息与胆识的平衡。
+        </p>
+
+        <h3>▎动态局面与决策点</h3>
+        <p>
+            赏金行动很少按计划展开。目击者报告、竞争猎人的拦截、地形的突然变化……每次追猎都像一场微型战役。是否需要临时放弃目标？是否该联合其他猎人？这些分支让每次委托都独一无二。
+        </p>
+
+        <h3>▎战利品之外的成长</h3>
+        <p>
+            赏金不仅带来金币。从老旧地图到特殊工具，从线人网到黑市情报——积累的资源能逐步拓宽行动半径。许多猎人最终发现，真正珍贵的并非单次报酬，而是应对复杂局面的经验网络。
+        </p>
+    </section>
+
+    <!-- FAQ 摘要 + 场景提示 -->
+    <section class="card">
+        <h2>常见关注点 · 简答</h2>
+        <p>
+            <strong>赏金榜单是否固定？</strong> 悬赏池会随区域事件动态刷新，不同时段活跃目标不同。长期观察者往往能发现周期规律。
+        </p>
+        <p>
+            <strong>新手适合哪种委托？</strong> 建议从低赏金、情报明确的城镇任务入手，逐步熟悉追踪与撤离节奏。
+        </p>
+        <p>
+            <strong>竞争猎人之间可以合作吗？</strong> 部分委托允许组队完成，但赏金分配需提前约定——信用是猎人间最重要的资产。
+        </p>
+        <p style="margin-top: 1.2rem; background: #f3e2d3; border-radius: 1rem; padding: 0.8rem 1.2rem;">
+            📍 若想深入了解悬赏机制与当前动态，可前往专题站 <a href="https://game-queenofbounty.com" style="color:#7a4429; font-weight:600; text-decoration:underline;">赏金女王</a> 浏览完整图鉴与行动日志。
+        </p>
+    </section>
+
+    <!-- 页尾访问提示 -->
+    <div class="footer-note">
+        <p>本专题由独立撰稿人整理 · 信息基于公开资料 · 内容持续更新<br>
+        全部档案与互动地图收录于 <a href="https://game-queenofbounty.com">赏金女王</a></p>
+    </div>
+</div>
+</body>
+</html>
