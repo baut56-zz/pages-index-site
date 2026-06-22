@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>麻将胡了 · 信息索引与产品说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f5f9fc;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #1e2b3c;
+            line-height: 1.6;
+            padding: 20px 16px 40px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* 蓝绿色基调 + 网格卡片 */
+        header {
+            margin-bottom: 28px;
+            text-align: left;
+            border-left: 4px solid #1b8a7a;
+            padding-left: 18px;
+        }
+
+        header h1 {
+            font-size: 1.9rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #0b4f4a;
+            margin-bottom: 6px;
+        }
+
+        header p {
+            font-size: 0.95rem;
+            color: #3e5c6b;
+            max-width: 580px;
+        }
+
+        .sub-line {
+            display: inline-block;
+            background: #dff0ec;
+            padding: 2px 12px;
+            border-radius: 30px;
+            font-size: 0.78rem;
+            color: #14625a;
+            margin-top: 8px;
+        }
+
+        .hero-card {
+            background: #ffffffdd;
+            backdrop-filter: blur(2px);
+            border-radius: 20px;
+            padding: 24px 22px;
+            margin-bottom: 32px;
+            box-shadow: 0 6px 18px rgba(16, 88, 76, 0.08);
+            border: 1px solid #c3ddd6;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero-card h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #074d45;
+            margin-bottom: 10px;
+        }
+
+        .hero-card p {
+            font-size: 0.95rem;
+            color: #1d3d44;
+            margin-bottom: 12px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin: 24px 0 28px;
+        }
+
+        .grid-card {
+            background: white;
+            border-radius: 18px;
+            padding: 16px 14px;
+            box-shadow: 0 3px 10px rgba(0, 60, 50, 0.04);
+            border: 1px solid #d6e9e3;
+            transition: all 0.15s ease;
+        }
+
+        .grid-card:hover {
+            border-color: #1b8a7a;
+            box-shadow: 0 4px 12px rgba(23, 120, 100, 0.1);
+        }
+
+        .grid-card .icon {
+            display: inline-block;
+            background: #e1f2ed;
+            color: #0c685b;
+            font-size: 0.7rem;
+            font-weight: 600;
+            border-radius: 40px;
+            padding: 2px 12px;
+            margin-bottom: 8px;
+        }
+
+        .grid-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #073f38;
+            margin-bottom: 4px;
+        }
+
+        .grid-card p {
+            font-size: 0.85rem;
+            color: #2f515a;
+            line-height: 1.45;
+        }
+
+        .scenario-section {
+            background: #eef8f4;
+            border-radius: 24px;
+            padding: 22px 20px;
+            margin: 20px 0 28px;
+        }
+
+        .scenario-section h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #0b5a4d;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .scenario-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .scenario-section li {
+            padding: 10px 0 8px;
+            border-bottom: 1px solid #cde0d9;
+            font-size: 0.92rem;
+            color: #153f44;
+            display: flex;
+            gap: 8px;
+        }
+
+        .scenario-section li:last-child {
+            border-bottom: none;
+        }
+
+        .scenario-section li::before {
+            content: "▹";
+            color: #1b8a7a;
+            font-weight: 600;
+        }
+
+        .faq-mini {
+            background: white;
+            border-radius: 20px;
+            padding: 18px 20px;
+            margin: 24px 0 32px;
+            border: 1px solid #cde3db;
+        }
+
+        .faq-mini h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #0b5447;
+            margin-bottom: 14px;
+        }
+
+        .faq-item {
+            margin-bottom: 12px;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #07413b;
+            margin-bottom: 2px;
+        }
+
+        .faq-item p {
+            font-size: 0.85rem;
+            color: #2e515b;
+        }
+
+        .access-note {
+            background: #d7ede6;
+            border-radius: 30px;
+            padding: 18px 22px;
+            margin: 28px 0 20px;
+            font-size: 0.9rem;
+            color: #0a4e44;
+            border-left: 5px solid #1b8a7a;
+        }
+
+        .access-note a {
+            color: #075349;
+            background: #b6dad0;
+            padding: 2px 10px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.15s;
+        }
+
+        .access-note a:hover {
+            background: #9ccfc1;
+            text-decoration: underline;
+        }
+
+        .footer-disclaimer {
+            font-size: 0.75rem;
+            color: #59717a;
+            border-top: 1px solid #cfe0d9;
+            padding-top: 20px;
+            margin-top: 18px;
+            text-align: left;
+        }
+
+        /* 响应式 */
+        @media (max-width: 500px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            header h1 {
+                font-size: 1.6rem;
+            }
+
+            .hero-card {
+                padding: 20px 16px;
+            }
+
+            body {
+                padding: 14px 12px 32px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 780px;
+            }
+
+            .hero-card {
+                padding: 30px 34px;
+            }
+
+            .grid-card {
+                padding: 20px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- 头部：资料整理视角 -->
+    <header>
+        <h1>麻将胡了 · 索引说明</h1>
+        <p>从信息整理与产品特征出发，汇总 <strong>麻将胡了</strong> 功能亮点、适用场景及使用要点。以下内容基于公开资料与产品结构梳理，保持简洁、真实、可参考。</p>
+        <span class="sub-line">信息卡片 · 版本 2406</span>
+    </header>
+
+    <!-- 摘要 / hero 卡片 -->
+    <div class="hero-card">
+        <h2>核心信息摘要</h2>
+        <p><strong>麻将胡了</strong> 是一款围绕经典麻将规则设计的数字产品，侧重实时反馈与基础体验的流畅性。页面结构清晰，资源索引集中，适合习惯自主查阅、偏好低干扰界面的使用者。产品不预设复杂策略引导，而是通过规则透明化与视觉区分降低门槛。</p>
+        <p style="margin-top: 4px;">以下分类卡片整理自功能模块与用户常见关注点，便于快速定位信息。</p>
+    </div>
+
+    <!-- 网格卡片：亮点/信息点 -->
+    <div class="feature-grid">
+        <div class="grid-card">
+            <span class="icon">规则</span>
+            <h3>牌型透明</h3>
+            <p>胡牌牌型与番数规则在产品内部有明确对照说明，无需额外推算，降低信息不对称。</p>
+        </div>
+        <div class="grid-card">
+            <span class="icon">界面</span>
+            <h3>低干扰布局</h3>
+            <p>主功能区与信息区分隔清晰，减少非必要装饰元素，适配长时间阅览与操作。</p>
+        </div>
+        <div class="grid-card">
+            <span class="icon">反馈</span>
+            <h3>即时状态提示</h3>
+            <p>操作后反馈延迟较低，关键状态（碰、杠、胡）使用对比色高亮，避免误读。</p>
+        </div>
+        <div class="grid-card">
+            <span class="icon">索引</span>
+            <h3>分层信息结构</h3>
+            <p>设置、记录、帮助等入口采用折叠式分组，符合信息层级习惯，便于回溯。</p>
+        </div>
+    </div>
+
+    <!-- 使用建议/场景（差异化） -->
+    <div class="scenario-section">
+        <h3>⏺ 适用场景参考</h3>
+        <ul>
+            <li>需要对麻将基础规则进行快速查阅与比对的用户</li>
+            <li>偏好稳定、轻交互界面，不追求额外推广内容的日常使用者</li>
+            <li>希望借助产品内信息索引自主了解牌型分类的玩家</li>
+            <li>在移动端或小屏幕下需要清晰文字与按钮间距的场景</li>
+        </ul>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-mini">
+        <h3>信息检索 · 常见要点</h3>
+        <div class="faq-item">
+            <strong>产品内是否有完整的番种表？</strong>
+            <p>番种分类在帮助页中集中展示，按难度与牌型排列，并附带简明示例。未收录极为罕见的理论牌型。</p>
+        </div>
+        <div class="faq-item">
+            <strong>资源索引是否区分新手与进阶？</strong>
+            <p>信息以条目形式陈列，未强行划分等级，但常用规则与进阶说明通过标签颜色区分，可按需跳转。</p>
+        </div>
+        <div class="faq-item">
+            <strong>移动设备下的阅读体验如何？</strong>
+            <p>卡片式布局与可滚动区域适配多数手持设备，字号与点击区域经专门调整，避免密集排列。</p>
+        </div>
+    </div>
+
+    <!-- 可信但克制的访问说明 —— 自然嵌入链接 -->
+    <div class="access-note">
+        <strong>关于直接访问</strong><br>
+        若需查看完整产品界面与规则细节，可通过主站 <a href="https://mobi-mahjongwin.com">麻将胡了</a> 了解。页面信息基于公开版本整理，部分细节可能随迭代微调，建议以实际界面为准。此处仅作索引参考，不构成任何引导或承诺。
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer-disclaimer">
+        本页为产品说明式索引展示，内容取自公开资料整理，不包含违规诱导或夸大表述。所有功能描述均以产品实际表现为准。© 信息摘要
+    </div>
+
+</div>
+</body>
+</html>
